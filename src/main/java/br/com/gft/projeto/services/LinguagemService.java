@@ -34,6 +34,10 @@ public class LinguagemService {
 		}
 		return linguagem.get();
 	}
+
+	public void excluirLinguagem(Long id) {
+		linguagemRepository.deleteById(id);
+	}
 		
 
 }

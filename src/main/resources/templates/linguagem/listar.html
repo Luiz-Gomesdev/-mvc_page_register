@@ -7,6 +7,7 @@
 	<div class="alert alert-primary" th:if="${#lists.isEmpty(lista)}">
 		Nenhuma linguagem cadastrada
 	</div>
+	<div class="alert alert-primary" th:if="${mensagem != null}" th:text="${mensagem}"></div>
 	<div th:if="${not #lists.isEmpty(lista)}">
 		<table class="table table-striped">
 			<thead>
@@ -21,10 +22,12 @@
 			<tbody>
 				<tr th:each="linguagem: ${lista}">
 					<td th:text="${linguagem.id}"></td>
-					<td th:text="${linguagem.nome}"></td>
-					<td th:text="${linguagem.ide}"></td>
-					<td th:text="${linguagem.versao}"></td>
-					<td><a th:href="@{/linguagem/editar(id=${linguagem.id})}">Editar</a></td>
+					<td th:text="${linguagem.nome}" ></td>
+					<td th:text="${linguagem.ide}" ></td>
+					<td th:text="${linguagem.versao}" width="30%"></td>
+					<td><a class="btn-primary btn-sm" th:href="@{/linguagem/editar(id=${linguagem.id})}">Editar</a>
+					<a class="btn-primary btn-sm" th:href="@{/linguagem/excluir(id=${linguagem.id})}" onclick="return confirm('Você realmente deseja excluir essa linguagem?')">Excluir</a>
+					</td>
 				</tr>
 			</tbody>
 		</table>	

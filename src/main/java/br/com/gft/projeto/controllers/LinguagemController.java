@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.gft.projeto.entities.Linguagem;
 import br.com.gft.projeto.services.LinguagemService;
@@ -40,8 +41,14 @@ public class LinguagemController {
 			return mv;
 		}
 		
-		mv.addObject("linguagem", new Linguagem());
-		linguagemService.salvarLinguagem(linguagem);
+		Linguagem linguagemSalva = linguagemService.salvarLinguagem(linguagem);
+		
+		if (linguagem.getId() == null) {
+			mv.addObject("linguagem", new Linguagem());
+		} else {
+			mv.addObject("linguagem", linguagemSalva);
+		}
+		
 		mv.addObject("mensagem", "Linguagem salva com sucesso!");
 
 		return mv;
@@ -58,7 +65,7 @@ public class LinguagemController {
 	}
 	
 	@RequestMapping("/editar")
-	public ModelAndView editarLinguagens(@RequestParam Long id) {
+	public ModelAndView editarLinguagem(@RequestParam Long id) {
 		
 		ModelAndView mv = new ModelAndView("linguagem/form.html");
 		Linguagem linguagem;
@@ -75,6 +82,21 @@ public class LinguagemController {
 		return mv;
 	}
 	
+	@RequestMapping("/excluir")
+	public ModelAndView excluirLinguagem(@RequestParam Long id, RedirectAttributes redirectAttributes) {
+		
+		ModelAndView mv = new ModelAndView("redirect:/linguagem");
+		
+		try {
+			linguagemService.excluirLinguagem(id);
+			redirectAttributes.addFlashAttribute("mensagem", "Linguagem excluída com sucesso!");
+		} catch (Exception e) {
+			redirectAttributes.addFlashAttribute("mensagem", "Erro ao excluir linguagem! " + e.getMessage());
+		}
+		
+		
+		return mv;
+	}
 	
 	
 
