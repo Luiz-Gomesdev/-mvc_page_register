@@ -39,4 +39,9 @@ public class DesenvolvedorService {
 		desenvolvedorRepository.deleteById(id);
 	}
 
+	public void excluirDesenvolvedor(Long id) {
+		desenvolvedorRepository.deleteById(id);
+		
+	}
+
 }

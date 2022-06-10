@@ -14,9 +14,9 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 </head>
 <body>
 	<div id="menu">
-		<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+		<nav class="navbar navbar-expand-lg navbar-light bg-primary mb-4">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="#">GFT</a>
+				<a class="navbar-brand text-white" href="#">GFT</a>
 				<button class="navbar-toggler" type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
 					aria-controls="navbarNavDropdown" aria-expanded="false"
@@ -25,10 +25,10 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 				</button>
 				<div class="collapse navbar-collapse" id="navbarNavDropdown">
 					<ul class="navbar-nav">
-						<li class="nav-item"><a class="nav-link active"
+						<li class="nav-item"><a class="nav-link active text-white"
 							aria-current="page" href="#">Home</a></li>
 						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#"
+							class="nav-link dropdown-toggle text-white" href="#"
 							id="navbarDropdownMenuLink" role="button"
 							data-bs-toggle="dropdown" aria-expanded="false"> Linguagens </a>
 							<ul class="dropdown-menu"
@@ -36,8 +36,8 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 								<li><a class="dropdown-item" th:href="@{/linguagem}">Listar</a></li>
 								<li><a class="dropdown-item" th:href="@{/linguagem/novo}">Cadastrar</a></li>
 							</ul></li>
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#"
+						<li class="nav-item dropdown text-white"><a
+							class="nav-link dropdown-toggle text-white" href="#"
 							id="navbarDropdownMenuLink" role="button"
 							data-bs-toggle="dropdown" aria-expanded="false"> Desenvolvedores </a>
 							<ul class="dropdown-menu"
@@ -46,7 +46,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 								<li><a class="dropdown-item" th:href="@{/desenvolvedor/editar}">Cadastrar</a></li>
 							</ul></li>
 						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#"
+							class="nav-link dropdown-toggle text-white" href="#"
 							id="navbarDropdownMenuLink" role="button"
 							data-bs-toggle="dropdown" aria-expanded="false"> Projetos </a>
 							<ul class="dropdown-menu"

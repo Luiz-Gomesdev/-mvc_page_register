@@ -11,7 +11,7 @@
 	<div th:if="${not #lists.isEmpty(lista)}">
 		<table class="table table-striped">
 			<thead>
-				<tr>
+				<tr class="bg-warning">
 					<th>Id</th>
 					<th>Linguagem</th>
 					<th>IDE</th>
@@ -26,7 +26,7 @@
 					<td th:text="${linguagem.ide}" ></td>
 					<td th:text="${linguagem.versao}" width="30%"></td>
 					<td><a class="btn-primary btn-sm" th:href="@{/linguagem/editar(id=${linguagem.id})}">Editar</a>
-					<a class="btn-primary btn-sm" th:href="@{/linguagem/excluir(id=${linguagem.id})}" onclick="return confirm('Você realmente deseja excluir essa linguagem?')">Excluir</a>
+					<a class="btn-danger btn-sm" th:href="@{/linguagem/excluir(id=${linguagem.id})}" onclick="return confirm('Você realmente deseja excluir essa linguagem?')">Excluir</a>
 					</td>
 				</tr>
 			</tbody>
